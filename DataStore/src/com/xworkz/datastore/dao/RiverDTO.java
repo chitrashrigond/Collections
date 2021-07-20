@@ -1,5 +1,6 @@
 package com.xworkz.datastore.dao;
 import java.io.Serializable;
+
 public class RiverDTO implements Serializable{
  private String name;
  private String origin;
