@@ -1,11 +1,12 @@
 package com.xworkz.datastore.dto.dao;
 import java.util.ArrayList;
+
 import java.util.Collection;
 import java.util.List;
 import java.util.Iterator;
 public  class TempleDAOImpl implements TempleDAO {
 	 List<TempleDTO> list = new ArrayList<TempleDTO>();
-	private Object itr;
+
 	
 
 	@Override

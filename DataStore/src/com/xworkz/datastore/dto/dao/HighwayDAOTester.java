@@ -42,7 +42,7 @@ HighwayDTO dto4=new HighwayDTO(9,66,HighwayType.NH,"kARNATAKA",1534.32D,true,"DD
 	System.out.println("by State name "+high);
 	}
 	
-	Collection<HighwayDTO>findNumberByStateName=dao.findNumberByStateName("Kerala");
+	dao.findNumberByStateName("Kerala");
 	for(HighwayDTO high:findByStateName){
 		
 	System.out.println("number by State name "+high);
@@ -53,16 +53,16 @@ HighwayDTO dto4=new HighwayDTO(9,66,HighwayType.NH,"kARNATAKA",1534.32D,true,"DD
 	boolean dto=dao.exist(dto4);
 	System.out.println("exist "+dto);
 	
-	boolean condition=dao.isCondition(9);
+	boolean condition=dao.isCondition(66);
 	System.out.println("condition "+condition);
 	
 	double length=dao.findLengthByNumber(402.32);
 	System.out.println("length "+length);
 	
-	HighwayDTO maxlength=dao.findBYMinLength();
+	dao.findBYMinLength();
 	System.out.println("min length "+dao);
 	
-	HighwayDTO minlength=dao.findBYMinLength();
+	dao.findBYMinLength();
 	System.out.println("min length "+dao);
 	
 	

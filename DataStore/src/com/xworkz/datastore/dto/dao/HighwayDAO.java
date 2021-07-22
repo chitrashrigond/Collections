@@ -5,24 +5,29 @@ import java.util.Collection;
 import com.xworkz.datastore.dao.constant.HighwayType;
 
 public interface HighwayDAO {
-	
-boolean save(HighwayDTO dto);
 
-Collection<HighwayDTO>findAll();
+	boolean save(HighwayDTO dto);
 
-Collection<Integer>findAllNumber();
+	Collection<HighwayDTO> findAll();
 
-int totalItems();
+	Collection<Integer> findAllNumber();
 
-Collection<HighwayDTO>findByHighwayType(HighwayType type);
+	int totalItems();
 
-Collection<HighwayDTO>findByStateName(String sname);
-Collection<HighwayDTO>findNumberByStateName(String sName);
-boolean exist(HighwayDTO dto);
-boolean isCondition(int number);
+	Collection<HighwayDTO> findByHighwayType(HighwayType type);
 
-double findLengthByNumber(double no);
-HighwayDTO findBYMaxLength();
-HighwayDTO findBYMinLength();
+	Collection<HighwayDTO> findByStateName(String sname);
+
+	Collection<HighwayDTO> findNumberByStateName(String sName);
+
+	boolean exist(HighwayDTO dto);
+
+	boolean isCondition(int number);
+
+	double findLengthByNumber(double no);
+
+	HighwayDTO findBYMaxLength();
+
+	HighwayDTO findBYMinLength();
 
 }
