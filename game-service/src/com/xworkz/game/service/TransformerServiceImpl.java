@@ -1,10 +1,13 @@
 package com.xworkz.game.service;
 
+import com.xworkz.game.dao.TransformerDAO;
+import com.xworkz.game.dao.TransformerDAOImpl;
 import com.xworkz.game.dto.TransformerDTO;
 
 public class TransformerServiceImpl implements TransformerService{
 	@Override
 	public String validateAndSave(TransformerDTO dto) {
+		TransformerDAO dao=new TransformerDAOImpl();
 		boolean nameValid=false;
 		boolean placeValid=false;
 		boolean happyValid=false;
@@ -56,6 +59,7 @@ public class TransformerServiceImpl implements TransformerService{
 				
 		if(nameValid&&placeValid&&happyValid&&sadValid&&likeToDoValid){
 			System.out.println("Data is valid ");
+			dao.validateAndSave(dto);
 		return "Success";
 		}
 				
