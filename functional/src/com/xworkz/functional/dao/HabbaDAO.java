@@ -1,10 +1,12 @@
 package com.xworkz.functional.dao;
 
+
+
 import java.util.Collection;
 
 import com.xworkz.functional.dto.HabbaDTO;
 import com.xworkz.functional.dto.MarketDTO;
-import com.xworkz.market.util.HabbaSearch;
+
 
 public interface HabbaDAO {
 

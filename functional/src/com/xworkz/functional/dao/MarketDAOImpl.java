@@ -1,13 +1,15 @@
 package com.xworkz.functional.dao;
 
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
+import com.xworkz.functional.dto.HabbaDTO;
 import com.xworkz.functional.dto.MarketDTO;
+
 import com.xworkz.functional.constatnt.MarketType;
-import com.xworkz.market.util.MarketSearch;
 
 public class MarketDAOImpl implements MarketDAO {
 
@@ -23,30 +25,28 @@ public class MarketDAOImpl implements MarketDAO {
 	@Override
 	public MarketDTO find(MarketSearch search) {
 
-		Iterator<MarketDTO> itr = this.list.iterator();
-		MarketDTO temp = null;
-		while (itr.hasNext()) {
-			MarketDTO marketDTO = itr.next();
-			if (search.test(marketDTO)) {
-				temp = marketDTO;
-
-			}
+	List<MarketDTO> dto =new ArrayList<MarketDTO>();
+	this.list.forEach(c->{
+		if(search.test(c)){
+			dto.add(c);
 		}
-		return temp;
+	});
+
+	
+		return dto.get(0);
 	}
 
 	@Override
 	public Collection<MarketDTO> findAll(MarketSearch search) {
 		Collection<MarketDTO> dto = new ArrayList<MarketDTO>();
-		Iterator<MarketDTO> itr = this.list.iterator();
-		while (itr.hasNext()) {
-			MarketDTO marketDTO = itr.next();
-			if (search.test(marketDTO)) {
-				dto.add(marketDTO);
-
-			}
+		this.list.forEach(d->{
+		if(search.test(d)){
+			dto.add(d);
 		}
+			});
+		
 		return dto;
 	}
+	}
 
-}
+
